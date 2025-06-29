@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-50: #EFF6FF; /* blue-50 */
+    --color-primary-100: #DBEAFE; /* blue-100 */
+    --color-primary-200: #BFDBFE; /* blue-200 */
+    --color-primary-500: #3B82F6; /* blue-500 */
+    --color-primary-600: #2563EB; /* blue-600 */
+    --color-primary-700: #1D4ED8; /* blue-700 */
+    --color-primary-800: #1E40AF; /* blue-800 */
+    --color-primary-900: #1E3A8A; /* blue-900 */
+    --color-primary-foreground: #FFFFFF; /* white */
+
+    /* Secondary Colors */
+    --color-secondary: #64748B; /* slate-500 */
+    --color-secondary-50: #F8FAFC; /* slate-50 */
+    --color-secondary-100: #F1F5F9; /* slate-100 */
+    --color-secondary-200: #E2E8F0; /* slate-200 */
+    --color-secondary-300: #CBD5E1; /* slate-300 */
+    --color-secondary-400: #94A3B8; /* slate-400 */
+    --color-secondary-500: #64748B; /* slate-500 */
+    --color-secondary-600: #475569; /* slate-600 */
+    --color-secondary-700: #334155; /* slate-700 */
+    --color-secondary-800: #1E293B; /* slate-800 */
+    --color-secondary-900: #0F172A; /* slate-900 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+
+    /* Accent Colors */
+    --color-accent: #059669; /* emerald-600 */
+    --color-accent-50: #ECFDF5; /* emerald-50 */
+    --color-accent-100: #D1FAE5; /* emerald-100 */
+    --color-accent-200: #A7F3D0; /* emerald-200 */
+    --color-accent-500: #10B981; /* emerald-500 */
+    --color-accent-600: #059669; /* emerald-600 */
+    --color-accent-700: #047857; /* emerald-700 */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Background Colors */
+    --color-background: #F8FAFC; /* slate-50 */
+    --color-surface: #FFFFFF; /* white */
+    --color-surface-secondary: #F1F5F9; /* slate-100 */
+
+    /* Text Colors */
+    --color-text-primary: #0F172A; /* slate-900 */
+    --color-text-secondary: #475569; /* slate-600 */
+    --color-text-muted: #64748B; /* slate-500 */
+    --color-text-inverse: #FFFFFF; /* white */
+
+    /* Status Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-50: #ECFDF5; /* emerald-50 */
+    --color-success-100: #D1FAE5; /* emerald-100 */
+    --color-success-600: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-50: #FFFBEB; /* amber-50 */
+    --color-warning-100: #FEF3C7; /* amber-100 */
+    --color-warning-600: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+
+    --color-error: #EF4444; /* red-500 */
+    --color-error-50: #FEF2F2; /* red-50 */
+    --color-error-100: #FEE2E2; /* red-100 */
+    --color-error-600: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+
+    /* Border Colors */
+    --color-border: #E2E8F0; /* slate-200 */
+    --color-border-muted: #F1F5F9; /* slate-100 */
+
+    /* Shadow Colors */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .nav-item {
+    @apply flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200;
+  }
+
+  .nav-item-active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .nav-item-inactive {
+    @apply text-text-secondary hover:text-text-primary hover:bg-surface-secondary;
+  }
+
+  .alert-banner {
+    @apply px-4 py-3 rounded-md border-l-4 flex items-start space-x-3;
+  }
+
+  .alert-success {
+    @apply bg-success-50 border-success text-success-600;
+  }
+
+  .alert-warning {
+    @apply bg-warning-50 border-warning text-warning-600;
+  }
+
+  .alert-error {
+    @apply bg-error-50 border-error text-error-600;
+  }
+
+  .loading-spinner {
+    @apply animate-spin rounded-full border-2 border-secondary-200 border-t-primary;
+  }
+}
